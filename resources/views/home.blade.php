@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+    <div class="col-md-2">
+         <a href="{{ url('/books') }}"><button type="button" class="btn btn-info" style="margin-top:10px"><img src="{{ url('./images/bookp.png') }}" alt=""style="max-height:50px">Go To Library</button></a>
+</div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"></div>
