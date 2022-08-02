@@ -19,16 +19,29 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+    .container{
+        background-image: linear-gradient(red, yellow);
+    }
+    .card{
+        height:110%;
+    }
+   h2{
+        color:white;
+        text-shadow: 0 0 3px #FF0000, 0 0 5px #000008;
+    }
+    </style>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/books') }}">
+            <div class="container" id="kamal" >
+                <h2 style="margin-left:30%">Library Management System</h2>
+                <!-- <a class="navbar-brand" href="{{ url('/books') }}">
                    Books
                 </a>
                 <a class="navbar-brand" href="{{ url('/borrowed-Books') }}">
                    Borrowd books
-                </a>
+                </a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

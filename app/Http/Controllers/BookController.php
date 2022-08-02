@@ -9,12 +9,18 @@ use Auth;
 class BookController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::where('status',0)->get();
+        // $userid= Auth::user()->id;
+        // $username = users::where('id',$userid)->get();
+        $searchkey2=$request->searchkey2;
+        $books = Book::where('status',0)->where(function ($q) use ($searchkey2){
+            $q->where('title','like',"%".$searchkey2."%")->orWhere('description','like',"%".$searchkey2."%")->orWhere('type','like',"%".$searchkey2."%");
+        })->get();
         // skip(0)->take(10)
     
-        return view('book.books',compact('books'));
+        
+        return view('book.books',compact('books','searchkey2'));
     }
     public function borrow($id)
     {

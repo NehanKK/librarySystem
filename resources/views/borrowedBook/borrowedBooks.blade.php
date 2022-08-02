@@ -12,24 +12,40 @@
     background-image: linear-gradient(white, white);
 
     }
+    h2{
+        color:white;
+        text-shadow: 0 0 3px #FF0000, 0 0 5px #000008;
+    }
 </style>
 @section('content')
 <div id="div">
 <div class="container">
 <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="col-md-2"><h2>Borrowed Books<img src="{{ url('./images/rightarrow.png') }}" alt=""style="max-height:30px"></h2>
+</div>
+<div class="col-md-2">
+</div>
+        <div class="col-md-4" style="margin-top:5px">
         <form action="{{ url('borrowed-Books') }}" method="GET">
   <div class="form-group">
     
-    <input type="text" class="form-control"  name="searchkey" aria-describedby="emailHelp" placeholder="" value="{{ $searchkey }}">
+    <input type="text" class="form-control"  name="searchkey" aria-describedby="emailHelp" placeholder="Search The Book" value="{{ $searchkey }}">
     
   </div>
  
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" style="margin-top:2px" >SEARCH</button>
 </form>
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+   <a href="{{ url('/books') }}"><button type="button" class="btn btn-info" style="margin-top:10px"><img src="{{ url('./images/bookp.png') }}" alt=""style="max-height:50px">Go To Library</button></a>
+
 </div>
 </div>
     <div class="row justify-content-center">
+    <div class="col-md-2">
+</div>
         <div class="col-md-8">
             <div class="row">
                
@@ -50,7 +66,7 @@
             <td scope="col">{{$book->description}}</td>
             <td scope="col">{{$book->price}}</td>
             <td scope="col">{{$book->type}}</tdW>
-            <td scope="col"><a href="{{url('return-book/'.$book->id)}}" class="btn btn-primary" >Return</a>
+            <td scope="col"><a href="{{url('return-book/'.$book->id)}}" class="btn btn-danger" >Return</a>
 </td>
 
         </tr>
@@ -61,6 +77,10 @@
 
 </div>
         </div>
+        <div class="col-md-2">
+    <img src="{{ url('./images/userbook.png') }}" alt=""style="max-height:500px">
+
+</div>
     </div>
 </div>
 </div>
